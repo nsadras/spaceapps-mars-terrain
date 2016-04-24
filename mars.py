@@ -1,4 +1,5 @@
 import bpy
+import random
 import urllib
 import urllib.request
 import numpy as np
@@ -92,8 +93,8 @@ def render_tile(lat, lon):
     #bpy.ops.transform.resize(value=(8.48719, 8.48719, 8.48719), constraint_axis=(False, False, False), constraint_orientation='GLOBAL', mirror=False, proportional='DISABLED', proportional_edit_falloff='SMOOTH', proportional_size=1)
 
 def main():
-    lat = 0 # -90 to 90
-    lon = 0 # -180 to 180
+    lat = random.randint(-90,90) # -90 to 90
+    lon = random.randint(-180,180) # -180 to 180
     filename = 'tile4.png'
     get_image(lat, lon)
     render_tile(lat, lon)
